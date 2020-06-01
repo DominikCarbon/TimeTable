@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import model.Matiere;
+
+/**
+ *
+ * @author PC fixe
+ */
+
+public class MatiereDAO extends DAO<Matiere> {
+    private Object connect;
+  
+
+  @Override
+  public boolean create(Matiere obj) {
+    return false;
+  }
+
+  @Override
+  public boolean delete(Matiere obj) {
+    return false;
+  }
+
+    @Override
+  public boolean update(Matiere obj) {
+    return false;
+  }
+
+  @Override
+  public Matiere find(Matiere obj) {
+return null;
+  }
+
+}
