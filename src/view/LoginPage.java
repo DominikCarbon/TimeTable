@@ -104,40 +104,4 @@ public class LoginPage extends JFrame //implements ActionListener
     frame.add(jp);
     
   }
-
-/*    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
- /* private class ButtonListener implements ActionListener {
-  
-  @Override
-  public void actionPerformed(ActionEvent ae)
-  { 
-    if (ADM.isSelected())
-    {
-       
-           
-    }
-     else
-        JOptionPane.showMessageDialog(null, "Wrong admin information please try again");
-    
-
-    if (USR.isSelected())
-    {
-        if((PW.getPassword()==null) && (ID.getText().isEmpty()))
-       {   JOptionPane.showMessageDialog(null, "Wrong user information please try again");
-       }
-        else
-            try{
-                if(ae.getSource().equals(blogin)){}
-            throw new Exception();}
-            catch(Exception d)
-            {}
-        
-        
-    } 
-  }}
-   
-  */
 }

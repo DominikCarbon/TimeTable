@@ -41,14 +41,6 @@ public class EtudiantDAO extends DAO<Etudiant> {
    
   @Override
   public Etudiant find(Etudiant obj) {
-      try {
-          co= new Connexion();
-          ArrayList<String> a=new ArrayList<>();
-          a=co.remplirChampsRequete("SELECT Id_Utilisateur FROM etudiant");
-          
-      } catch (SQLException | ClassNotFoundException ex) {
-          Logger.getLogger(EtudiantDAO.class.getName()).log(Level.SEVERE, null, ex);
-      }
    Etudiant eleve = new Etudiant();     
     return eleve;
   }
