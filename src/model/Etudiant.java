@@ -10,25 +10,25 @@ package model;
  * @author PC fixe
  */
 public class Etudiant extends Utilisateur{
-    
+
+
     private int ID_Utilisateur;
     //private int ID_Groupe;
     private int Numero;
   
     
-    public Etudiant(int ID_Utilisateur,int Numero)
-    {
-     super();
-     
-     this.ID_Utilisateur=ID_Utilisateur;
-    
-     this.Numero=Numero;
-     }
 
-    public Etudiant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+     
     
+
+    public Etudiant(int ID, String Email, int Passwd, String Nom, String Prenom, int Droit,int ID_Utilisateur,int Numero) 
+    {
+        super(ID, Email, Passwd, Nom, Prenom, Droit);
+        this.ID_Utilisateur=ID_Utilisateur;
+        this.Numero=Numero;
+    }
+ 
     public int getID_Utilisateur()
     {return ID_Utilisateur;}
     
@@ -41,5 +41,11 @@ public class Etudiant extends Utilisateur{
     public void setNumero(int Numero)
     {this.Numero=Numero;}
 
+
+     }
  
-}
+
+
+
+
+

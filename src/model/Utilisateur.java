@@ -20,6 +20,7 @@ public class Utilisateur {
     protected String Prenom;
     protected int Droit;
     
+
     public Utilisateur(){}
     
     public Utilisateur(int id,String mail, int mdp, String nom, String prenom, int droit)
@@ -37,6 +38,7 @@ public class Utilisateur {
         Email=mail;
         Passwd=mdp;
     }  
+
 
 
  public int getID() {

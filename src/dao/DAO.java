@@ -24,34 +24,41 @@ public abstract class DAO<T> {
     protected  ResultSetMetaData rsetMeta;
 
   
- //Connexion à la BDD via la classe Connexion 
+ //Connexion Ã  la BDD via la classe Connexion 
+
+    
+   
+
+   
 
   /**
-  * Méthode de création
+  * MÃ©thode de crÃ©ation
   * @param obj
   * @return boolean 
   */
   public abstract boolean create(T obj);
 
   /**
-  * Méthode pour effacer
+  * MÃ©thode pour effacer
   * @param obj
   * @return boolean 
   */
   public abstract boolean delete(T obj);
 
   /**
-  * Méthode de mise à jour
+  * MÃ©thode de mise Ã  jour
   * @param obj
   * @return boolean
   */
   public abstract boolean update(T obj);
 
   /**
-  * Méthode de recherche des informations
-  * @param obj
-  * @return T
-     * @throws java.lang.ClassNotFoundException
-  */
-  public abstract T find(T obj); 
+  * MÃ©thode de recherche des informations
+     * @param obj
+  * @return T 
+  **/
+    
+
+  public abstract T find(T obj);  
+
 }

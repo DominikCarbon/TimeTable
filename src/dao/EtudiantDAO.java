@@ -16,34 +16,33 @@ import java.util.logging.Logger;
 import static javax.management.Query.lt;
 import model.Etudiant;
 
+
 /**
  *
  * @author PC fixe
  */
-public class EtudiantDAO extends DAO<Etudiant> {
-    
+public class EtudiantDAO extends DAO<Etudiant>  {
+     private ArrayList<String> AId_Utilisateur=new ArrayList<>();
+     private ArrayList<String> Numero=new ArrayList<>();
   
 
-  @Override
+     @Override
   public boolean create(Etudiant obj) {
     return false;
   }
 
-  @Override
+     @Override
   public boolean delete(Etudiant obj) {
     return false;
   }
    
-  @Override
+     @Override
   public boolean update(Etudiant obj) {
     return false;
   }
    
-  @Override
+     @Override
   public Etudiant find(Etudiant obj) {
-   Etudiant eleve = new Etudiant();     
-    return eleve;
-  }
-    
-
-   }
+         return null;
+   
+  }}

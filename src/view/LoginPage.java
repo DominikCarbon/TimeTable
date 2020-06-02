@@ -5,6 +5,9 @@
  */
 package view;
 
+import dao.Connexion;
+import dao.EtudiantDAO;
+import dao.UtilisateurDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -46,14 +49,20 @@ import javax.swing.ImageIcon;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.Etudiant;
+import model.Utilisateur;
  
  
 public class LoginPage extends JFrame //implements ActionListener
-{ int Droit;
-  JButton blogin = new JButton("Continuer");
+{ 
+  int Droit;
+  JButton continuer = new JButton("Se connecter");
   JTextField ID = new JTextField(20);
   JPasswordField PW = new JPasswordField(20);
   JLabel password = new JLabel("Mot de Passe");
@@ -91,17 +100,70 @@ public class LoginPage extends JFrame //implements ActionListener
     lbl.setFont(new Font("Arial",10 , 32));
     ButtonGroup bgroup = new ButtonGroup();
    
-    blogin.setBackground(Color.red);
+    continuer.setBackground(Color.red);
     username.setForeground(Color.black);
     password.setForeground(Color.black);
     lbl.setForeground(Color.black); 
+    continuer.addActionListener(new ConnectListener());
     jp.add(lbl); 
     jp.add(username); 
     jp.add(ID);
     jp.add(password);
     jp.add(PW);
-    jp.add(blogin,BorderLayout.SOUTH);
+    jp.add(continuer,BorderLayout.SOUTH);
     frame.add(jp);
     
   }
+ private class ConnectListener implements ActionListener {
+
+        @Override
+        
+        public void actionPerformed(ActionEvent ae) {
+          
+            Object source = ae.getSource();
+            String mail =ID.getText();
+            char[] pass=PW.getPassword();
+            
+            
+            if(source==continuer)
+            {
+                
+                int p=Integer.parseInt(String.valueOf(pass));
+                
+                Utilisateur U=new Utilisateur(mail,p);
+                
+                UtilisateurDAO UDAO=new UtilisateurDAO();
+                U=UDAO.find(U);
+                System.out.println("trouvé?"+U.getPrenom());
+                
+                if(U.getNom()==null)
+                {
+                    JOptionPane.showMessageDialog(null, "Connexion impossible");
+                
+                 new EDT().setVisible(false);
+                }
+                else if(U.getDroit()==Droit && U.getNom() != null)
+                {switch(Droit)
+                 { case 1: new EDT().setVisible(true);
+                   case 2: new EDT().setVisible(true);
+                   case 3: new EDT().setVisible(true);
+                   case 4: new EDT().setVisible(true);
+                }
+                }
+                else
+                { JOptionPane.showMessageDialog(null, "Le droit est incorrect");
 }
+                
+            }
+            
+            //EtudiantDAO D;
+            //Etudiant E;
+            
+             
+                }
+            }}
+
+      
+              
+
+
