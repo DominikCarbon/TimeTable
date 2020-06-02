@@ -20,7 +20,7 @@ public class Enseignant {
   //Prénom du professeur
   private String prenom = "";
   //Liste des matières dispensées
-  private Set<Matiere> listMatiere = new HashSet<Matiere>();
+  private Set<Matiere> listMatiere = new HashSet<>();
 
   public Enseignant(int id, String nom, String prenom) {
     this.id = id;

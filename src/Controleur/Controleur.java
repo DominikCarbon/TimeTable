@@ -6,7 +6,9 @@
 package Controleur;
 
 import dao.DAO;
+import dao.Connexion;
 import dao.EtudiantDAO;
+import dao.UtilisateurDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -15,15 +17,24 @@ import model.Etudiant;
 import model.Utilisateur;
 import view.FirstPage;
 import view.LoginPage;
+import java.util.*;
 
 /**
  *
- * @author PC fixe
+ * @author PC fixeas
  */
 public class Controleur {
-     public static void main(String[] args) {
+     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+         
+    /*String rq=("INSERT INTO `projet_java`.`cours` (`Nom`) VALUES ('NouveauCours')");
+    //bdd.ajouterRequete(rq);
+    String rq2=("INSERT INTO `projet_java`.`cours` (`Nom`) VALUES ('EncoreUnCours')");
+    //bdd.ajouterRequete(rq2);
+    bdd.executeUpdate(rq);
+    bdd.executeUpdate(rq2);
+  */
+      new FirstPage().setVisible(true);
     
-    new FirstPage().setVisible(true);
   
 }
     

@@ -82,7 +82,7 @@ public class FirstPage extends JFrame{
         @Override
         
         public void actionPerformed(ActionEvent ae) {
-            int Droit;
+            int Droit=0;
             Object source = ae.getSource();
             String selected = (String) jcb.getSelectedItem();
             String s;
@@ -91,21 +91,17 @@ public class FirstPage extends JFrame{
                 switch (selected) {
                     case "Etudiant":
                         Droit=4;
-                        new LoginPage(Droit).setVisible(true);
                         break;
                     case "Enseignant":
                         Droit=3;
-                        new LoginPage(Droit).setVisible(false);
                         break;
                     case "Referant":
                         Droit=2;
-                        new LoginPage(Droit).setVisible(false);
                         break;
                     case "Administrateur":
                         Droit=1;
-                        new LoginPage(Droit).setVisible(false);
                         break;
-                }
+                }  new LoginPage(Droit).setVisible(true);
                
                
                

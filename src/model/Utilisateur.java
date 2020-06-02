@@ -5,6 +5,8 @@
  */
 package model;
 
+import javax.swing.plaf.synth.Region;
+
 /**
  *
  * @author PC fixe
@@ -18,8 +20,25 @@ public class Utilisateur {
     protected String Prenom;
     protected int Droit;
     
-    public Utilisateur()
-    {}  
+
+    public Utilisateur(){}
+    
+    public Utilisateur(int id,String mail, int mdp, String nom, String prenom, int droit)
+    {
+        ID=id;
+        Email=mail;
+        Passwd=mdp;
+        Nom=nom;
+        Prenom=prenom;
+        Droit=droit;
+    }
+    
+    public Utilisateur(String mail, int mdp)
+    {
+        Email=mail;
+        Passwd=mdp;
+    }  
+
 
 
  public int getID() {
