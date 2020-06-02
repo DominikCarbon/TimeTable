@@ -46,7 +46,7 @@ public class ProjetEDT {
                     try 
                     {
                         // db parameters - ptest is the name of the database
-                        String url       = "jdbc:mysql://127.0.0.1:3306/projet_java";
+                        String url       = "jdbc:mysql://127.0.0.1:3308/projet_java";
                         String user      = "root";
                         String password  = "";
                         String nomCours  = "";
@@ -79,7 +79,7 @@ public class ProjetEDT {
                     try 
                     {
                         // db parameters - ptest is the name of the database
-                        String url       = "jdbc:mysql://127.0.0.1:3306/projet_java";
+                        String url       = "jdbc:mysql://127.0.0.1:3308/projet_java";
                         String user      = "root";
                         String password  = "";
                         String nomCours  = "";
