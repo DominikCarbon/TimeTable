@@ -20,7 +20,7 @@ public class Enseignant {
   //Prénom du professeur
   private String prenom = "";
   //Liste des matières dispensées
-  private Set<Matiere> listMatiere = new HashSet<>();
+  private Set<Cours> listMatiere = new HashSet<>();
 
   public Enseignant(int id, String nom, String prenom) {
     this.id = id;
@@ -54,21 +54,21 @@ public class Enseignant {
     this.prenom = prenom;
   }
 
-  public Set<Matiere> getListMatiere() {
+  public Set<Cours> getListMatiere() {
     return listMatiere;
   }
 
-  public void setListMatiere(Set<Matiere> listMatiere) {
+  public void setListMatiere(Set<Cours> listMatiere) {
     this.listMatiere = listMatiere;
   }
 
   //Ajoute une matière à un professeur
-  public void addMatiere(Matiere matiere){
+  public void addMatiere(Cours matiere){
     this.listMatiere.add(matiere);
   }
 
   //Retire une matière à un professeur
-  public void removeMatiere(Matiere matiere){
+  public void removeMatiere(Cours matiere){
     this.listMatiere.remove(matiere);
   }
 }

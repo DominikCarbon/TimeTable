@@ -17,8 +17,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -29,13 +27,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
-/**
- *
- * @author PC fixe
- */
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -66,16 +57,15 @@ public class LoginPage extends JFrame //implements ActionListener
   JTextField ID = new JTextField(20);
   JPasswordField PW = new JPasswordField(20);
   JLabel password = new JLabel("Mot de Passe");
-  
-
   JLabel username = new JLabel("Login Utilisateur");
+  AdminInterface admin = new AdminInterface(); 
   
   
   public LoginPage(int Droit)
   { this.Droit=Droit;
     setLayout(new BorderLayout());
     setTitle("Login Page");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.dispose();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     int w = this.getSize().width;
     int h = this.getSize().height;
@@ -89,8 +79,6 @@ public class LoginPage extends JFrame //implements ActionListener
     //background.setLayout(new FlowLayout());
     Container frame = getContentPane();
     JPanel jp = new JPanel();
-    
-    
    
    
     //blogin.addActionListener(new ButtonListener());    
@@ -140,14 +128,19 @@ public class LoginPage extends JFrame //implements ActionListener
                 {
                     JOptionPane.showMessageDialog(null, "Connexion impossible");
                 
-                 new EDT().setVisible(false);
+                 
                 }
                 else if(U.getDroit()==Droit && U.getNom() != null)
-                {switch(Droit)
-                 { case 1: new EDT().setVisible(true);
-                   case 2: new EDT().setVisible(true);
-                   case 3: new EDT().setVisible(true);
-                   case 4: new EDT().setVisible(true);
+                {
+                    switch(Droit)
+                 { 
+                   case 1: 
+                            admin.setVisible(true);
+                            break;
+                       
+                   case 2: ;break;
+                   case 3:;break;
+                   case 4: new EDT(U.getNom()).setVisible(true);break;
                 }
                 }
                 else
@@ -155,11 +148,7 @@ public class LoginPage extends JFrame //implements ActionListener
 }
                 
             }
-            
-            //EtudiantDAO D;
-            //Etudiant E;
-            
-             
+
                 }
             }}
 

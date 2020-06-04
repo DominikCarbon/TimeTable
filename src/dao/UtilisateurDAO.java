@@ -5,8 +5,6 @@
  */
 package dao;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -28,17 +26,76 @@ public boolean create(Utilisateur obj) {
 
 @Override
 public boolean delete(Utilisateur obj) {
+        
     return false;
 }
+
+  public void deleteS (int id) throws SQLException{
+
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("DELETE FROM `seance` WHERE (`ID`='"+id+"')" );
+
+  }
    
+  public void modif_nom_cours (int id, String nom) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("UPDATE `cours` SET `Nom`= '"+nom+"' WHERE(`ID`='"+id+"')" );
+ 
+  }
+  
+  public void annuler_seance (int id) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("UPDATE `seance` SET `Etat`= '"+0+"' WHERE(`ID`='"+id+"')" );
+ 
+  }
+  
+  public void valider_seance (int id) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("UPDATE `seance` SET `Etat`= '"+1+"' WHERE(`ID`='"+id+"')" );
+ 
+  }
+  
+   public void modif_horaire_seance (int id, int nvl_plage) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("UPDATE `seance` SET `Plage_horaire`= '"+nvl_plage+"' WHERE(`ID`='"+id+"')" );
+ 
+  }
+   
+   public void ajout_seance (int id, int nvl_plage) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    stmt.executeUpdate ("UPDATE `seance` SET `Plage_horaire`= '"+nvl_plage+"' WHERE(`ID`='"+id+"')" );
+ 
+  }
+  
+   public void affectation_enseignant (int id_seance, int id_enseignant, String date) throws SQLException{
+      
+    stmt=this.co.createStatement();
+    rset = stmt.executeQuery("SELECT ID_Seance FROM `seance_enseignants` WHERE (ID_Enseignants='"+id_enseignant+"')");
+    rsetMeta = rset.getMetaData();
+                      //      ("SELECT Date AND Plage FROM `seance` WHERE (ID='"+id_seance+"')");
+                                if date!=
+                            
+ 
+  }
+  
+  
+  
+  
+  
 @Override
 public boolean update(Utilisateur obj) {
     return false;}
 
+
+
 @Override
 public Utilisateur find(Utilisateur ut)
 {
-    Connection conn;
     if(ut==null)
     {
         System.out.println("nuuuuul");

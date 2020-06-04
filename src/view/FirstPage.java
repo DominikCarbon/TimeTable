@@ -39,10 +39,11 @@ public class FirstPage extends JFrame{
  
   JComboBox jcb;
   public FirstPage()
-  {setLayout(new BorderLayout());
-    //setTitle("Bienvenue votre EDT ");
+  {
+    setLayout(new BorderLayout());
     setTitle("INSEEC Connexion");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    this.dispose();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     int w = this.getSize().width;
     int h = this.getSize().height;
@@ -71,10 +72,6 @@ public class FirstPage extends JFrame{
     jp.add(background);
     
     frame.add(jp);
-    
-    
-    
-  
   
 }
   private class ButtonListener implements ActionListener {
@@ -102,8 +99,7 @@ public class FirstPage extends JFrame{
                         Droit=1;
                         break;
                 }  new LoginPage(Droit).setVisible(true);
-               
-               
+                    
                
 }  
                 

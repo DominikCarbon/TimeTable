@@ -24,12 +24,7 @@ public abstract class DAO<T> {
     protected  ResultSetMetaData rsetMeta;
 
   
- //Connexion Ã  la BDD via la classe Connexion 
-
-    
-   
-
-   
+ //Connexion Ã  la BDD via la classe Connexion    
 
   /**
   * MÃ©thode de crÃ©ation
