@@ -26,7 +26,7 @@ import javax.swing.table.TableModel;
 
 
 
-public class EDT extends JFrame {
+public class EDT_etudiant extends JFrame {
 
   private final JTable tableau;
   String nom;
@@ -37,7 +37,7 @@ public class EDT extends JFrame {
   JTextField s = new JTextField(20);
   JButton sem = new JButton("Quelle Semaine ?");
 
-  public EDT(String nom){
+  public EDT_etudiant(String nom){
       
     this.nom=nom;
     this.setLocationRelativeTo(null);

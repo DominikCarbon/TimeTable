@@ -140,7 +140,7 @@ public class LoginPage extends JFrame //implements ActionListener
                        
                    case 2: ;break;
                    case 3:;break;
-                   case 4: new EDT(U.getNom()).setVisible(true);break;
+                   case 4: new EDT_etudiant(U.getNom()).setVisible(true);break;
                 }
                 }
                 else

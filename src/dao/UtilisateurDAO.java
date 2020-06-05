@@ -77,14 +77,14 @@ public boolean delete(Utilisateur obj) {
     stmt=this.co.createStatement();
     rset = stmt.executeQuery("SELECT ID_Seance FROM `seance_enseignants` WHERE (ID_Enseignants='"+id_enseignant+"')");
     rsetMeta = rset.getMetaData();
-                      //      ("SELECT Date AND Plage FROM `seance` WHERE (ID='"+id_seance+"')");
-                                if date!=
-                            
- 
+    int id = rset.getInt(1);
+    
+    stmt=this.co.createStatement();
+    rset = stmt.executeQuery  ("SELECT Date AND Plage_horaire FROM `seance` WHERE (ID='"+id_seance+"')");
+  
+                                //if date!=
+                           
   }
-  
-  
-  
   
   
 @Override
