@@ -10,18 +10,15 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
 /**
@@ -31,26 +28,20 @@ import javax.swing.SwingConstants;
 public class FirstPage extends JFrame{
   
   JLabel Txt= new JLabel("Connectez-vous selon votre rôle à l'INSEEC", SwingConstants.CENTER);
-  /*JButton Etudiant = new JButton("Etudiant");
-  JButton Enseignant = new JButton("Enseignant");
-  JButton Referant = new JButton("Referant"); 
-  JButton Administrateur = new JButton("Administrateur");*/
   JButton Valider = new JButton("Continuer");
- 
   JComboBox jcb;
+  
   public FirstPage()
   {
     setLayout(new BorderLayout());
     setTitle("INSEEC Connexion");
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    this.dispose();
+    setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     int w = this.getSize().width;
     int h = this.getSize().height;
-    int x = (dim.width-w)/2;
-    int y = (dim.height-h)/2;
     
-    setLocation(x-150, y-100);
+    
+    setLocation(500, 300);
     setSize(260,250);
     JLabel background=new JLabel(new ImageIcon("C:\\Dom Cours ECE Paris\\ING3\\ECE_Cours\\ECE_Semestre2\\POO Java\\emploi-du-temps\\src\\view\\inseec.jpg"));
     add(background);
@@ -72,8 +63,8 @@ public class FirstPage extends JFrame{
     jp.add(background);
     
     frame.add(jp);
-  
 }
+  
   private class ButtonListener implements ActionListener {
 
         @Override
@@ -99,8 +90,9 @@ public class FirstPage extends JFrame{
                         Droit=1;
                         break;
                 }  new LoginPage(Droit).setVisible(true);
+                   
                     
-               
+                       
 }  
                 
         }

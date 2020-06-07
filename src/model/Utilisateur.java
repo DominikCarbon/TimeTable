@@ -5,7 +5,6 @@
  */
 package model;
 
-import javax.swing.plaf.synth.Region;
 
 /**
  *
@@ -19,7 +18,6 @@ public class Utilisateur {
     protected String Nom;
     protected String Prenom;
     protected int Droit;
-    protected int IDannule;
     
 
     public Utilisateur(){}
@@ -39,7 +37,12 @@ public class Utilisateur {
         Email=mail;
         Passwd=mdp;
     }  
-
+ 
+    public Utilisateur(int ID, String Nom)
+    {
+       this.ID=ID;
+       this.Nom=Nom;
+    } 
 
 
  public int getID() {
@@ -77,8 +80,6 @@ public class Utilisateur {
   public void setPrenom(String Prenom) {
     this.Prenom = Prenom;
   }   
-  
-
   
   public int getDroit()
   {return Droit;}

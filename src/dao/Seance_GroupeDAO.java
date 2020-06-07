@@ -7,39 +7,51 @@ package dao;
 
 import static dao.DAO.stmt;
 import java.sql.SQLException;
+import model.Seance_Groupe;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Cours;
 import model.Etudiant;
 
 /**
  *
  * @author Dominik
  */
-public class CoursDAO extends DAO<Cours>{
+public class Seance_GroupeDAO extends DAO<Seance_Groupe>{
 
     @Override
-    public boolean create(Cours obj) {
+    public boolean create(Seance_Groupe obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Cours obj) {
+    public boolean delete(Seance_Groupe obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Cours obj) {
+    public boolean update(Seance_Groupe obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Cours find(Cours obj) {
-        try {
-        int id=obj.getID();
+    public Seance_Groupe find(Seance_Groupe obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public ArrayList<Seance_Groupe> trouver(Seance_Groupe obj) 
+    {
+        if(obj==null)
+    {
+        System.out.println("nuuuuul");
+    }
+    else
+    {
+    try {
+        int idG=obj.getIDGroupe();
         stmt=this.co.createStatement();
         
-        rset = stmt.executeQuery("SELECT * FROM `projet_java`.`cours` WHERE (ID='"+id+"')");
+        rset = stmt.executeQuery("SELECT * FROM `projet_java`.`Seance_Groupe` WHERE (ID_Groupe='"+idG+"')");
         // récupération du résultat de l'ordre
         rsetMeta = rset.getMetaData();
         
@@ -53,22 +65,20 @@ public class CoursDAO extends DAO<Cours>{
         }
         else
         {
-            int idC=0;
-            String nom = null;
+            int idS;
+            ArrayList<Seance_Groupe> A=new ArrayList<>();
             while(rset.next())
             {
-                idC=rset.getInt(1);
-                
-                nom=rset.getString(2);
+                idS=rset.getInt(1);
+                Seance_Groupe S=new Seance_Groupe(obj.getIDGroupe(),idS);
+                A.add(S);
             }
-            
-            Cours C=new Cours(obj.getID(),nom);
-            return C;
+            return A;
         }
     } catch (SQLException ex) {
         Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
     }
-        return null;
     }
-    
+    return null;
+    }
 }

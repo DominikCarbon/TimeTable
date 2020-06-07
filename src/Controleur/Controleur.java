@@ -18,13 +18,19 @@ import model.Utilisateur;
 import view.FirstPage;
 import view.LoginPage;
 import java.util.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import view.ReferentInterface;
 
 /**
  *
  * @author PC fixeas
  */
 public class Controleur {
+    
+    
      public static void main(String[] args) throws SQLException, ClassNotFoundException {
+         
          
     /*String rq=("INSERT INTO `projet_java`.`cours` (`Nom`) VALUES ('NouveauCours')");
     //bdd.ajouterRequete(rq);
