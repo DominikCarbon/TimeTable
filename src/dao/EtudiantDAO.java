@@ -5,25 +5,17 @@
  */
 package dao;
 
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javax.management.Query.lt;
 import model.Etudiant;
 
 
 /**
  *
- * @author PC fixe
+ * @aobjhor PC fixe
  */
 public class EtudiantDAO extends DAO<Etudiant>  {
-     private ArrayList<String> AId_Utilisateur=new ArrayList<>();
-     private ArrayList<String> Numero=new ArrayList<>();
   
 
      @Override
@@ -43,6 +35,37 @@ public class EtudiantDAO extends DAO<Etudiant>  {
    
      @Override
   public Etudiant find(Etudiant obj) {
-         return null;
-   
+    try {
+        int id=obj.getID();
+        int p=obj.getPasswd();
+        stmt=this.co.createStatement();
+        
+        rset = stmt.executeQuery("SELECT * FROM `projet_java`.`etudiant` WHERE (ID_Utilisateur='"+id+"')");
+        // récupération du résultat de l'ordre
+        rsetMeta = rset.getMetaData();
+        
+        // calcul du nombre de colonnes du resultat
+        int nbColonne = rsetMeta.getColumnCount();
+
+        if(nbColonne==0)
+        {
+            return null;   
+        }
+        else
+        {
+            int idG=0;
+            int num = 0;
+            while(rset.next())
+            {
+                num=rset.getInt(2);
+                idG=rset.getInt(3);
+            }
+            
+            Etudiant E=new Etudiant(obj.getID(),obj.getEmail(),obj.getPasswd(),obj.getNom(),obj.getPrenom(),obj.getDroit(),num,idG);
+            return E;
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+   return null;
   }}

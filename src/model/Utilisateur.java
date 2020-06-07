@@ -5,11 +5,10 @@
  */
 package model;
 
-import javax.swing.plaf.synth.Region;
 
 /**
  *
- * @author PC fixe
+ * @author Dominik
  */
 public class Utilisateur {
     
@@ -38,7 +37,12 @@ public class Utilisateur {
         Email=mail;
         Passwd=mdp;
     }  
-
+ 
+    public Utilisateur(int ID, String Nom)
+    {
+       this.ID=ID;
+       this.Nom=Nom;
+    } 
 
 
  public int getID() {

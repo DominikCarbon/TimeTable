@@ -30,33 +30,22 @@ import javax.swing.SwingConstants;
  */
 public class FirstPage extends JFrame{
   
-  JLabel Txt= new JLabel("Connectez-vous selon votre rôle à l'INSEEC", SwingConstants.CENTER);
-  /*JButton Etudiant = new JButton("Etudiant");
-  JButton Enseignant = new JButton("Enseignant");
-  JButton Referant = new JButton("Referant"); 
-  JButton Administrateur = new JButton("Administrateur");*/
+  JLabel Txt= new JLabel("                                                                                                                                                                                                                                                                            Connectez-vous selon votre rôle à l'INSEEC                                                                                                                                                                                                                                                                                      ", SwingConstants.CENTER);
   JButton Valider = new JButton("Continuer");
  
   JComboBox jcb;
   public FirstPage()
-  {setLayout(new BorderLayout());
-    //setTitle("Bienvenue votre EDT ");
+  { 
     setTitle("INSEEC Connexion");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-    int w = this.getSize().width;
-    int h = this.getSize().height;
-    int x = (dim.width-w)/2;
-    int y = (dim.height-h)/2;
-    
-    setLocation(x-150, y-100);
-    setSize(260,250);
+    setLocation(100,20);
+    setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    setSize(1200, 700);
     JLabel background=new JLabel(new ImageIcon("C:\\Dom Cours ECE Paris\\ING3\\ECE_Cours\\ECE_Semestre2\\POO Java\\emploi-du-temps\\src\\view\\inseec.jpg"));
     add(background);
     background.setLayout(new FlowLayout());
     Container frame = getContentPane();
     JPanel jp = new JPanel();
-    String s[]={"Etudiant","Enseignant","Référent","Administrateur"};
+    String s[]={"Etudiant","Enseignant","Referent","Administrateur"};
     jcb= new JComboBox(s);
     
     
@@ -65,17 +54,12 @@ public class FirstPage extends JFrame{
     Valider.addActionListener(new ButtonListener());
     Valider.setBackground(Color.white);
     
-    jp.add(Txt);
-    jp.add(jcb);
-    jp.add(Valider);
+    jp.add(Txt,BorderLayout.CENTER);
+    jp.add(jcb,BorderLayout.CENTER);
+    jp.add(Valider,BorderLayout.CENTER);
     jp.add(background);
     
     frame.add(jp);
-    
-    
-    
-  
-  
 }
   private class ButtonListener implements ActionListener {
 
@@ -88,25 +72,22 @@ public class FirstPage extends JFrame{
             String s;
             if(source==Valider)
             {   //en fonction du droit ouvrir
-                switch (selected) {
+                switch (selected) 
+                {
                     case "Etudiant":
                         Droit=4;
                         break;
                     case "Enseignant":
                         Droit=3;
                         break;
-                    case "Referant":
+                    case "Referent":
                         Droit=2;
                         break;
                     case "Administrateur":
                         Droit=1;
                         break;
                 }  new LoginPage(Droit).setVisible(true);
-               
-               
-               
-}  
-                
+            }                  
         }
     }
 }

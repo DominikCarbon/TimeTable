@@ -7,42 +7,38 @@ package model;
 
 /**
  *
- * @author PC fixe
+ * @author Dominik
  */
 public class Etudiant extends Utilisateur{
 
 
-    private int ID_Utilisateur;
-    //private int ID_Groupe;
+    private int ID_Groupe;
     private int Numero;
-  
-    
 
-   
-     
-    
 
-    public Etudiant(int ID, String Email, int Passwd, String Nom, String Prenom, int Droit,int ID_Utilisateur,int Numero) 
+    public Etudiant(int ID, String Email, int Passwd, String Nom, String Prenom, int Droit,int Numero,int idGroupe) 
     {
         super(ID, Email, Passwd, Nom, Prenom, Droit);
-        this.ID_Utilisateur=ID_Utilisateur;
+        this.ID_Groupe=idGroupe;
         this.Numero=Numero;
     }
+        public Etudiant(int ID, String Email, int Passwd, String Nom, String Prenom, int Droit) 
+    {
+        super(ID, Email, Passwd, Nom, Prenom, Droit);
+    }
  
-    public int getID_Utilisateur()
-    {return ID_Utilisateur;}
-    
-    public void setID_Utilisateur(int ID_Utilisateur)
-    {this.ID_Utilisateur=ID_Utilisateur;}
     
     public int getNumero()
     {return Numero;}
     
+    public int getGroupe()
+    {return ID_Groupe;}
+    
     public void setNumero(int Numero)
     {this.Numero=Numero;}
-
-
-     }
+    
+    
+}
  
 
 

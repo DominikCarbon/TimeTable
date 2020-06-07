@@ -8,7 +8,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 //import com.sdz.connection.SdzConnection;
@@ -24,15 +23,10 @@ public abstract class DAO<T> {
     protected  ResultSetMetaData rsetMeta;
 
   
- //Connexion Ã  la BDD via la classe Connexion 
-
-    
-   
-
-   
+ //Connexion a la BDD via la classe Connexion
 
   /**
-  * MÃ©thode de crÃ©ation
+  * MÃ©thode de création
   * @param obj
   * @return boolean 
   */
@@ -57,8 +51,6 @@ public abstract class DAO<T> {
      * @param obj
   * @return T 
   **/
-    
-
-  public abstract T find(T obj);  
-
+  
+  public abstract T find(T obj);
 }
